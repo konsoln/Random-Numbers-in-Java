@@ -20,12 +20,15 @@
  * 
  * 
  */
-public class RandomNumberTest{
-	public static void main (String[] args){
-		int low = 5;
-		int high = 10;
-		RandomNumber t = new RandomNumber();
-		int n = t.number(low, high);
-		System.out.println(" Zufallsnummer ist " + n);
+ 
+class RandomNumber{
+	public static int number(int x, int y){
+		int thenumber;
+		if (x == y) {
+			thenumber = x ;
+		} else {
+			thenumber = (int) ((Math.max(x,y) - Math.min(x,y)) * Math.random() + Math.min(x,y));
+		};
+		return thenumber;
 	}
 }
